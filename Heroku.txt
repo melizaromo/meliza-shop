@@ -1,0 +1,31 @@
+# Configuraciones de Heroku
+heroku config:add APP_NAME='Meliza Shop'
+heroku config:add APP_ENV=production
+heroku config:add APP_KEY=base64:BIqHA1PTPLo4fp3nQ6Wgf6ytJI+Xjt0564pYmXojXPY=
+heroku config:add APP_DEBUG=true
+heroku config:add APP_URL=https://meliza-shop.herokuapp.com/
+
+# Paso 1:
+# Implementar PostgreSQL en Heroku pero desde su interfaz
+# Comando Mostrar la credenciales de PostgreSQL
+heroku pg:credentials:url
+
+# Configuraciones de Heroku con PostgreSQL
+heroku config:add DB_CONNECTION=pgsql
+heroku config:add DB_HOST=ec2-50-17-90-177.compute-1.amazonaws.com
+heroku config:add DB_PORT=5432
+heroku config:add DB_DATABASE=degc0jndm8548t
+heroku config:add DB_USERNAME=btxwaospohqsmt
+heroku config:add DB_PASSWORD=f6633be31331563cba8f3e7706d0e5c4b650e775df6a3418625ceaad8fca1cca
+
+#
+heroku run bash
+# Salir de esa terminal
+    exit
+#
+heroku run php artisan migrate
+
+# Se cambia a produccion 
+composer require fzaninotto/faker
+
+heroku run php artisan migrate:refresh --seed
