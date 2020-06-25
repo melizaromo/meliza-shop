@@ -18,9 +18,7 @@ Route::get('/', function () {
     return view('Home');
 })->middleware('auth');
 
-Route::get('/Regalo', function () {
-    return view('Regalo');
-})->middleware('auth');
+Route::resource('/Regalo', 'RegaloController')->middleware('auth');
 
 Route::get('/Producto', function () {
     return view('Producto');

@@ -9,12 +9,13 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
-
-                    {{ Auth::user()->name }}
+                    <div class="alert alert-info" role="alert">
+                        {{ Auth::user()->name }}
+                    </div>
                 </div>
             </div>
         </div>

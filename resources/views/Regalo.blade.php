@@ -85,6 +85,34 @@
             <img class="" src="{{ asset('img/Shorts.jpg') }}" width="500px" height="500px" alt="" />
         </a>
     </section>
+
+    <section class="contact-section bg-light text-center">
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($regalos as $regalo)
+                        <tr style="font-size: 15px;">
+                            <td> {{ $regalo->regalo_id }} </td>
+                            <td> {{ $regalo->descripcion }}</td>
+                            <td> {{ $regalo->precio }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+            {{ $regalos->links() }}
+        </div>
+    </section>
+
+
     <!-- Footer-->
     <footer class="footer bg-black small text-center text-white-50">
         <div class="container">Copyright © Meliza Shop</div>
