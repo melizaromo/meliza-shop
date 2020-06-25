@@ -13,9 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('Home');
+})->middleware('auth');
+
+Route::get('/Regalo', function () {
+    return view('Regalo');
+})->middleware('auth');
+
+Route::get('/Producto', function () {
+    return view('Producto');
+})->middleware('auth');
+
+Route::resource('/Inventario', 'ProductoController')->middleware('auth');
+
+Route::get('/Contacto', function () {
+    return view('Contacto');
+})->middleware('auth');
 
 Auth::routes();
 
